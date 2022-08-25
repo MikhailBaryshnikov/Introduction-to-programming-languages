@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+
 class Task {
     
   static void Main() 
   {
-    Task5();
+    Task8();
   }
   
   public static void Task1() 
@@ -139,11 +140,44 @@ class Task {
             if (num2 > num3) Console.WriteLine($"2-ое число {num2} больше 1-го числа {num1} и 3-го числа {num3}");
             else
             {
-                if (num1 == num3) Console.WriteLine($"2-ое число {num2} больше 1-го числа {num1}, но равно 3-му числу {num3}");
+                if (num2 == num3) Console.WriteLine($"2-ое число {num2} больше 1-го числа {num1}, но равно 3-му числу {num3}");
                 else Console.WriteLine($"3-ое число {num3} больше 2-го числа {num2} и 1-го числа {num1}");
             }
         }
     } 
   }    
   
+  public static void Task6() 
+  {
+    Console.WriteLine("Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).");
+    
+    Console.Write("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    
+    if(num%2 == 0) 
+    {
+        Console.WriteLine($"Число {num} четное");
+    }
+    else 
+    {
+        Console.WriteLine($"Число {num} нечетное");
+    }
+  }
+  
+  public static void Task8() 
+  {
+    Console.WriteLine("Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.");
+    
+    Console.Write("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    string a ="";
+    
+    for(int i = 1; i < num + 1; i++)
+    {
+        if(i%2 == 0) a = a + i.ToString() + ", ";
+    }       
+    
+    Console.WriteLine($"Out: {a}");
+    
+  }
 }
