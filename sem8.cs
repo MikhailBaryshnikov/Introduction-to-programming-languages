@@ -255,5 +255,60 @@ class Task {
     }
 
   }   
+    
+  public static void FillArraySpiral4x4(int[,] array)
+  {
+    int n = array.GetLength(0);  
+      
+    int i = 0;
+    int j = 0;
+    int value = 0;  
+    array[i,j] = value;
+    while (n != 2)
+    {   
+        int count = 0;
+        if(n == 3) count = 1;
+        
+        for (int k = 0; k < n - 1; k++ ){
+            j = j + 1;
+            value = value + 1;
+            array[i,j] = value;
+            Console.WriteLine($"\narr[{i},{j}] = {array[i,j]};");
+        }
+        for (int k = 0; k < n - 1 - count; k++ ){
+            i = i + 1;
+            value = value + 1;
+            array[i,j] = value;
+            Console.WriteLine($"\narr[{i},{j}] = {array[i,j]};");
+        } 
+        for (int k = 0; k < n - 1 - count; k++ ) {
+            j = j - 1;
+            value = value + 1;
+            array[i,j] = value;
+            Console.WriteLine($"\narr[{i},{j}] = {array[i,j]};");
+        }
+        for (int k = 1; k < n - 1- count; k++ ) {
+            i = i - 1;
+            value = value + 1;
+            array[i,j] = value;
+            Console.WriteLine($"\narr[{i},{j}] = {array[i,j]};");
+        }
+        n = n - 1;
+    }
+  }
+  
+  public static void Task62() 
+  {
+    Console.WriteLine("Напишите программу, которая заполнит спирально массив 4 на 4. ");
+    
+    int x = 4;
+    int y = 4;
+    
+    int[,] arr= new int[x, y];
+    FillArraySpiral4x4(arr);
+    Console.WriteLine("\nSpiral array:");
+    PrintArray(arr);
+    
+  }  
   
 }
